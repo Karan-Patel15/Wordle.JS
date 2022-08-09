@@ -5824,10 +5824,14 @@ function selectWord() {
     return WORDS[Math.floor(Math.random() * 5758)];
 }
 
+function isValidInput(input) {
+    return /^[a-zA-Z]+$/.test(input) && input.length === 1;
+}
+
 window.addEventListener('keydown', function (event) {
 
     if (!gameOver) {
-        if (current < 5 && event.key.length === 1) {
+        if (current < 5 && isValidInput(event.key)) {
             //add some validation here for alpha characters somehow instead of length check
             guess += event.key;
             gameBoard[attempt - 1][current].innerText = event.key.toUpperCase();
