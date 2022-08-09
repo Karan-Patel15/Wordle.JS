@@ -5854,8 +5854,7 @@ window.addEventListener('keydown', function (event) {
             } else {
                 gameOver = true;
                 if (!won) {
-                    setTimeout(() => { 
-                        alert(`Game Over! Word was: ${secretWord}`);}, 500);
+                    setTimeout(() => { alert(`Game Over! Word was: ${secretWord}`); }, 500);
                 }
 
             }
